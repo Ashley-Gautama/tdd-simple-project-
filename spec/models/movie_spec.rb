@@ -8,7 +8,7 @@ RSpec.describe Movie, type: :model do
       expect(FactoryGirl.create(:movie)).to be_valid}
 
     it {"is invalid without a name"
-      FactoryGirl.build(:movie).should have_and_belong_to_many(:movies)}
+      FactoryGirl.build(:movie).should have_and_belong_to_many(:actors)}
 
     it {"validates uniqeness of name"
         should validate_uniqueness_of(:title) }
@@ -31,4 +31,3 @@ RSpec.describe Movie, type: :model do
       end
 
     end
-  
