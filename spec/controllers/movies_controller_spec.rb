@@ -98,11 +98,12 @@ end
         delete :destroy, id: movie.id
       end.to change(Movie, :count).by(-1)
     end
-  end
 
-  it "redirects to the movies list" do
-    movie = Movie.create!(title: "something", description: "hja", releasedate:2)
-    delete :destroy, {:id => movie.to_param}
-    expect(response).to redirect_to(movies_url)
+
+    it "redirects to the movies list" do
+      movie = Movie.create!(title: "something", description: "hja", releasedate:2)
+      delete :destroy, {:id => movie.to_param}
+      expect(response).to redirect_to(movies_url)
+    end
   end
 end

@@ -82,4 +82,29 @@ RSpec.describe ActorsController, type: :controller do
       end
     end
   end
+  describe "PUT update" do
+    it "updates the requested actors" do
+      actor = Actor.create!(name: "something", bio: "hja", age:2)
+
+      put :update, {:id => actor.to_param, :actor => { "age" => "new age" }}
+      assigns(:actor).should eq(actor)
+      expect(response).to redirect_to(actor)
+    end
+  end
+
+  describe "DELETE destroy" do
+    it "destroys the requested actor" do
+      actor = Actor.create!(name: "something", bio: "hja", age:2)
+      expect do
+        delete :destroy, id: actor.id
+      end.to change(Actor, :count).by(-1)
+    end
+
+
+    it "redirects to the actors list" do
+      actor = Actor.create!(name: "something", bio: "hja", age:2)
+      delete :destroy, {:id => actor.to_param}
+      expect(response).to redirect_to(actors_url)
+    end
+  end
 end
