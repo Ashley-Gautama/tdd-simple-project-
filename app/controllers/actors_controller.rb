@@ -30,6 +30,27 @@ class ActorsController < ApplicationController
     end
   end
 
+  def update
+    @actor = Actor.find(params[:id])
+
+      if @actor.update(actor_params)
+          redirect_to @actor , notice: 'Actor was successfully updated.'
+      else
+        render :edit
+      end
+    end
+
+  # DELETE /actors/1
+  # DELETE /actors/1.json
+  def destroy
+    @actor=Actor.find(params[:id])
+    @actor.destroy
+
+       redirect_to actors_url, notice: 'Actor was successfully destroyed.'
+
+    end
+private
+
   def actor_params
     params.require(:actor).permit(:name, :bio, :age)
   end
