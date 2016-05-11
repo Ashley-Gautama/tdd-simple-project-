@@ -1,2 +1,2 @@
-class ActorController < ApplicationController
+class ActorsController < ApplicationController
 end
