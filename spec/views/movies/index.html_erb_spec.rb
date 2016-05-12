@@ -3,10 +3,14 @@ require 'spec_helper'
 
 
 RSpec.describe "movies/index", type: :view do
-  let(:movie) { Movie.create(title: "movie@social.com", description: "12345678", releasedate:12) }
-  let(:other_movie) { Movie.create(title: "movie@asocial.com", description: "12aS345678", releasedate:123) }
+
+
 
   before(:each) do
+  assign(:movies, [
+  Movie.create!(title: "whatever", description: "nice movie", releasedate:1212),
+  Movie.create!(title: "gibberish", description: "pretty sweet", releasedate:123)
+])
 
     render
   end
@@ -16,12 +20,12 @@ RSpec.describe "movies/index", type: :view do
   end
 
   it "renders a list of movies with a description" do
-    assert_select "p", description: movie.description, count: 1
-    assert_select "p", description: other_movie.description, count: 1
+    assert_select "p", text: "nice movie", count: 1
+    assert_select "p", text: "pretty sweet", count: 1
   end
 
   it "renders a list of movies with a title" do
-    assert_select ".post>.meta", title: movie.title, count: 1
-    assert_select ".post>.meta", title: other_movie.title, count: 1
+    assert_select "p", text: "whatever", count: 1
+    assert_select "p", text: "gibberish", count: 1
   end
 end

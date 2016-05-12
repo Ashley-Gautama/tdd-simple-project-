@@ -50,7 +50,7 @@ class MoviesController < ApplicationController
     @movie=Movie.find(params[:id])
     @movie.destroy
 
-       redirect_to movies_url, notice: 'Movie was successfully destroyed.' 
+       redirect_to movies_url, notice: 'Movie was successfully destroyed.'
 
     end
 
