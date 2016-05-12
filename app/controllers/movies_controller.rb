@@ -9,6 +9,7 @@ class MoviesController < ApplicationController
   # GET /movies/1.json
   def show
     @movie=Movie.find(params[:id])
+    @movie.actors
 
   end
 
@@ -64,7 +65,7 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :description, :releasedate)
+      params.require(:movie).permit(:title, :description, :releasedate, :actors)
     end
 
 
