@@ -9,6 +9,7 @@ class MoviesController < ApplicationController
   # GET /movies/1.json
   def show
     @movie=Movie.find(params[:id])
+
   end
 
   # GET /movies/new
@@ -65,6 +66,8 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:title, :description, :releasedate)
     end
+
+
 
 
   end
