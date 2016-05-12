@@ -5,14 +5,17 @@ RSpec.describe "movies/show/", type: :view do
 
 
   before(:each) do
-
-    assign(:movie, [
-    Movie.create!(title: "Heavenly sword", description: "nice excellent", releasedate:1212)
+    assign(:actors, [
+    philip=Actor.create!(name: "philip", bio: "brute", age:43 ),
+    thomas=Actor.create!(name: "thomas", bio: "massive", age:54 )
 
     ])
+    assign(:movie,
+    Movie.create!(title: "Heavenly sword", description: "nice excellent", releasedate:1212, actors: [philip, thomas])
+
+    )
 
 
-  
 
 
 
