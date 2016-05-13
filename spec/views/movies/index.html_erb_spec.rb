@@ -22,8 +22,8 @@ puts "#{Movie.all}"
   end
 
   it "renders a list of movies with a title" do
-    assert_select "p", text: "whatever", count: 1
-    assert_select "p", text: "gibberish", count: 1
+    assert_select "h3", text: "whatever", count: 1
+    assert_select "h3", text: "gibberish", count: 1
   end
 
   it "renders a list of movies with a description" do

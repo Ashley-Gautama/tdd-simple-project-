@@ -23,9 +23,7 @@ RSpec.describe "movies/show/", type: :view do
   render
   end
 
-  it "renders the title of the page" do
-    assert_select "h1", text: "Movie", count: 1
-  end
+
 
   it "renders a list of movies with a description" do
     assert_select "p", text: "nice excellent", count: 1

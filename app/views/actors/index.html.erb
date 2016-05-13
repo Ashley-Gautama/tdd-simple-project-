@@ -1,8 +1,15 @@
-<h1>Actors</h1>
 
-<% @actors.each do |actor| %>
+<div class="actor-item">
 
-    <p><%= actor.name %></p>
-    <p><%= actor.bio %></p>
-  </div>
-<% end %>
+  
+
+  <div class="inline">
+    <h1>Actors</h1>
+
+     <% @actors.each do |actor| %>
+
+     <h3><%= link_to actor.name,actor %></h3>
+      <p><%= actor.bio %></p>
+      <% end %>
+    </div>
+</div>
