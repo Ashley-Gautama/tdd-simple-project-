@@ -1,8 +1,22 @@
-<h1>Movies</h1>
 
-<% @movies.each do |movie| %>
 
-    <p><%= movie.title %></p>
-    <p><%= movie.description %></p>
+<div class=movie-item>
+
+
+   <div class="inline">
+     <h1>Movies</h1>
+
+     <% @movies.each do |movie| %>
+
+      <h3><%= link_to movie.title , movie %></h3>
+
+
+      <p><%= movie.description %></p>
+      <p><%= movie.releasedate %></p>
+    <% end %>
+
+
+
+
   </div>
-<% end %>
+</div>

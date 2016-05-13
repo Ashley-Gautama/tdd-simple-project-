@@ -24,7 +24,7 @@ RSpec.describe "actors/index", type: :view do
   end
 
   it "renders a list of actors with a name" do
-    assert_select "p", text: "Jamie", count: 1
-    assert_select "p", text: "Sandor", count: 1
+    assert_select "h3", text: "Jamie", count: 1
+    assert_select "h3", text: "Sandor", count: 1
   end
 end
