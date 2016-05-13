@@ -1,8 +1,12 @@
-<div class="movie-item">
-  <div class="inline">
+
   <h1><%=@movie.title%></h1>
   <p><%= @movie.description%></p>
   <p><%= @movie.releasedate %></p>
+  <br>
+  <% @movie.actors.each do |actor| %>
 
-  </div>
-</div>
+      <p><%= actor.name %></p>
+
+<%end%>
+
+  
