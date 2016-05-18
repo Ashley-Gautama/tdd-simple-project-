@@ -1,2 +1,2 @@
 A simple project still under development. This is a solo project I'm still working on.
-What is specifically interesting I did this from a TDD perspective
+What is specifically interesting I did this from a TDD perspective. It also show the has many and belongs to many relationship.
